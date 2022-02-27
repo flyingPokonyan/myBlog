@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.myblog.mapper.MessageMapper">
+
+    <select id="findByParentIdNull" resultType="com.myblog.entity.Message">
+        select *
+        from myblog.t_message m
+        where m.parent_message_id = #{parentId}
+        order by m.create_time desc
+    </select>
+
+    <select id="findByParentIdNotNull" resultType="com.myblog.entity.Message">
+        select *
+        from myblog.t_message m
+        where m.parent_message_id = #{parentId}
+        order by m.create_time desc
+    </select>
+
+    <select id="findByReplayId" resultType="com.myblog.entity.Message">
+        select *
+        from myblog.t_message m
+        where m.parent_message_id = #{childId}
+        order by m.create_time desc
+    </select>
+
+    <insert id="saveMessage" parameterType="com.myblog.entity.Message">
+        insert into myblog.t_message (nickname,email,content,avatar,create_time,parent_message_id,admin_message)
+        values (#{nickname},#{email},#{content},#{avatar},#{createTime},#{parentMessageId},#{adminMessage});
+    </insert>
+    
+    <delete id="deleteMessage">
+        delete from myblog.t_message where id = #{id}
+    </delete>
+</mapper>

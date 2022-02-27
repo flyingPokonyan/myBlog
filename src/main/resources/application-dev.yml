@@ -1,0 +1,6 @@
+logging:
+  level:
+    root: info
+    com.star: debug
+  file:
+    name: log/blog-dev.log
