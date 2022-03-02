@@ -104,7 +104,7 @@
     </select>
 
     <select id="recommendBlogList" resultType="com.myblog.queryvo.RecommendBlog">
-        select * from myblog.t_blog where t_blog.recommend = true order by t_blog.create_time desc
+        select * from myblog.t_blog where t_blog.recommend = true order by t_blog.create_time desc limit 4
     </select>
 
     <select id="searchBlogList" resultMap="firstPageBlog">

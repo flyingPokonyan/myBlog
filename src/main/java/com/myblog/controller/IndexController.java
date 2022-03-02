@@ -28,8 +28,8 @@ public class IndexController {
     //获取最新推荐文章和最新文章列表
     @GetMapping({"/","","/index"})
     public String index(Model model,@RequestParam(defaultValue = "1",value = "pageNum") Integer pageNum){
-        PageHelper.startPage(pageNum,10);
         List<RecommendBlog> recommendBlogs = blogService.recommendBlogList();
+        PageHelper.startPage(pageNum,10);
         List<FirstPageBlog> firstPageBlogs = blogService.firstBlogList();
         PageInfo pageInfo = new PageInfo(firstPageBlogs);
         model.addAttribute("pageInfo",pageInfo);
