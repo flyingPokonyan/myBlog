@@ -32,3 +32,6 @@
 2022-03-02 19:31:23.358  INFO 13480 --- [http-nio-8080-exec-1] com.myblog.aspect.LogAspect              : result: index
 2022-03-02 19:31:24.049  INFO 13480 --- [http-nio-8080-exec-3] com.myblog.aspect.LogAspect              : Request: {url='http://localhost:8080/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='class com.myblog.controller.IndexController.blogMessage', args=[{}]}
 2022-03-02 19:31:25.016  INFO 13480 --- [http-nio-8080-exec-3] com.myblog.aspect.LogAspect              : result: index :: blogMessage
+2022-03-02 19:40:04.705  INFO 13480 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-03-02 19:40:04.707  INFO 13480 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-02 19:40:04.721  INFO 13480 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
